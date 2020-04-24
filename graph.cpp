@@ -8,3 +8,15 @@
 Changes:
 4-24-20: created file
 */
+#ifndef GRAPH_CPP
+#define GRAPH_CPP
+
+#include "graph.h"
+#include <iostream>
+
+template<class T>
+graph<T>::graph(){}
+
+
+
+#endif
