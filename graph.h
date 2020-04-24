@@ -15,7 +15,7 @@ Changes:
 template <class T>
 class graph{
 private:
-	const int MAXSIZE = 100;
+	static const int MAXSIZE = 100;
 	int numberOfEdges = 0;
 	int numberOfVertices = 0;
 	int edgeArray[MAXSIZE][MAXSIZE];
@@ -23,7 +23,7 @@ private:
 
 public:
 	graph();
-	graph(graph<T>& copyGraph);
+	graph(const graph<T>& copyGraph);
 	~graph();
 	bool isEmpty();
 	int getNumVertices();
