@@ -9,8 +9,7 @@ Changes:
 4-24-20: created file
 */
 #include <iostream>
-int main()
+int main(void)
 {
-    std::cout << "Hello";
-    return 0;
+    
 }
