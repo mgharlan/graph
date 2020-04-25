@@ -38,6 +38,9 @@ public:
 	T getVertexVal(int pos);
 	void depthFirstTraversal();
 	void breadthFirstTravel();
+
+	//Debugging
+	void displayData();
 };
 
 #include "graph.cpp"
