@@ -61,7 +61,14 @@ bool graph<T>::removeEdge(T start, T end){
 
 template<class T>
 bool graph<T>::addVertex(T value){
-	
+	if (numberOfVertices < MAXSIZE){
+		vertexArray[numberOfVertices] = value;
+		numberOfVertices++;
+		return true;
+	}
+	else{
+		return false;
+	}
 }
 
 template<class T>
