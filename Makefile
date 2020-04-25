@@ -8,12 +8,18 @@ archive:
 
 main: main.o graph.o
 	$(CC) main.o graph.o -o main 
+	
+test: test.o graph.o
+	$(CC) test.o graph.o -o test
 
 main.o: main.cpp graph.h
 	$(CC) $(CFLAGS) main.cpp 
+	
+test.o: test.cpp graph.h
+	$(CC) $(CFLAGS) test.cpp
 	
 graph.o: graph.cpp graph.h
 	$(CC) $(CFLAGS) graph.cpp
 
 clean:
-	rm -rf *o main
+	rm -rf *o main test
