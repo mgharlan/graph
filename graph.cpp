@@ -225,6 +225,7 @@ void graph<T>::depthFirstTraversal(T start){
 	int vSize = 1;
 	
 	s.push(start);
+	std::cout<<"visited: "<<s.top()<<std::endl;
 	depthHelper(start, s, visited, vSize);
 }
 
@@ -235,12 +236,12 @@ void graph<T>::depthHelper(T start, std::stack<T>& s, T* visited, int size){
 		if(checkEdge(start,val) != 0 and 
 			not checkVisited(val,visited,size)){
 				s.push(val);
+				std::cout<<"visited: "<<s.top()<<std::endl;
 				visited[size] = val;
 				size++;
 				depthHelper(val,s,visited,size);
 		}
 	}
-	std::cout<<s.top()<<std::endl;
 	s.pop();
 }
 
@@ -264,7 +265,7 @@ void graph<T>::breadthFirstTraversal(T start){
 	visited[0] = start;
 	int vSize = 1;
 	
-	q.push(start);
+	std::cout<<"visited: "<<start<<std::endl;
 	breadthHelper(start, q, visited, vSize);
 }
 
@@ -276,12 +277,15 @@ void graph<T>::breadthHelper(T start, std::queue<T>& q, T* visited, int size){
 			not checkVisited(val,visited,size)){
 				q.push(val);
 				visited[size] = val;
+				std::cout<<"visited: "<<val<<std::endl;
 				size++;
-				breadthHelper(val,q,visited,size);
 		}
 	}
-	std::cout<<q.front()<<std::endl;
-	q.pop();
+	if (q.size() > 0){
+		T val = q.front();
+		q.pop();
+		breadthHelper(val, q, visited, size);
+	}
 }
 
 template<class T>

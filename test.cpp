@@ -89,6 +89,8 @@ int main(void){
      
 	g.displayData();
 	std::cout << std::endl;
+	std::cout<<"DEPTH"<<std::endl;
+	g.depthFirstTraversal(1);
+	std::cout<<"BREADTH"<<std::endl;
 	g.breadthFirstTraversal(1);
-	//g.depthFirstTraversal(1);
 }
