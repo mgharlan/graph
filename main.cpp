@@ -11,9 +11,11 @@ Changes:
 
 #include <iostream>
 #include "graph.h"
-
+#include <fstream>
 
 int main(void)
 {
-
+    std::ifstream infile;
+    std::string inputfilename;
+    inputfilename = "input.txt";
 }
