@@ -1,0 +1,26 @@
+Reno -> SanFran -> SaltLake -> Seattle -> LasVegas -> Reno : 3358
+Reno -> SanFran -> SaltLake -> LasVegas -> Seattle -> Reno : 3204
+Reno -> SanFran -> Seattle -> SaltLake -> LasVegas -> Reno : 2726
+Reno -> SanFran -> Seattle -> LasVegas -> SaltLake -> Reno : 3090
+Reno -> SanFran -> LasVegas -> SaltLake -> Seattle -> Reno : 2752
+Reno -> SanFran -> LasVegas -> Seattle -> SaltLake -> Reno : 3270
+Reno -> SaltLake -> SanFran -> Seattle -> LasVegas -> Reno : 3626
+Reno -> SaltLake -> SanFran -> LasVegas -> Seattle -> Reno : 3652
+Reno -> SaltLake -> Seattle -> SanFran -> LasVegas -> Reno : 3174
+Reno -> SaltLake -> Seattle -> LasVegas -> SanFran -> Reno : 3270
+Reno -> SaltLake -> LasVegas -> SanFran -> Seattle -> Reno : 3020
+Reno -> SaltLake -> LasVegas -> Seattle -> SanFran -> Reno : 3090
+Reno -> Seattle -> SanFran -> SaltLake -> LasVegas -> Reno : 3108
+Reno -> Seattle -> SanFran -> LasVegas -> SaltLake -> Reno : 3020
+Reno -> Seattle -> SaltLake -> SanFran -> LasVegas -> Reno : 3288
+Reno -> Seattle -> SaltLake -> LasVegas -> SanFran -> Reno : 2752
+Reno -> Seattle -> LasVegas -> SanFran -> SaltLake -> Reno : 3652
+Reno -> Seattle -> LasVegas -> SaltLake -> SanFran -> Reno : 3204
+Reno -> LasVegas -> SanFran -> SaltLake -> Seattle -> Reno : 3288
+Reno -> LasVegas -> SanFran -> Seattle -> SaltLake -> Reno : 3174
+Reno -> LasVegas -> SaltLake -> SanFran -> Seattle -> Reno : 3108
+Reno -> LasVegas -> SaltLake -> Seattle -> SanFran -> Reno : 2726
+Reno -> LasVegas -> Seattle -> SanFran -> SaltLake -> Reno : 3626
+Reno -> LasVegas -> Seattle -> SaltLake -> SanFran -> Reno : 3358
+Best Path: 
+Reno -> SanFran -> Seattle -> SaltLake -> LasVegas -> Reno : 2726

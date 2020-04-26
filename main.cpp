@@ -28,34 +28,57 @@ int main(void)
 
     std::string currentPath, bestPath;
     int currentWeight;
-    int bestWeight = 100000;
+    int bestWeight = 1000000;
 
     //Create an array of indices based on number of vertices
     for (int i = 0; i < sizeOfVerticesA; i++)
         indexArray[i] = i;
+	
+	//prep file for writing
+	std::ofstream outfile;
+	outfile.open("result.txt");
 
     // O will always be the first element (never shifted) Reno
     //Iterate over all the possible paths
     do
     {
         currentPath = g.getVertexVal(indexArray[0]) + " -> " + g.getVertexVal(indexArray[1]) 
-                      + " -> " + g.getVertexVal(indexArray[2]) + " -> " + g.getVertexVal(indexArray[4]) 
-                      + " -> " + g.getVertexVal(indexArray[0]);
+					  + " -> " + g.getVertexVal(indexArray[2]) + " -> " + g.getVertexVal(indexArray[3])
+                      + " -> " + g.getVertexVal(indexArray[4]) + " -> " + g.getVertexVal(indexArray[0]) ;
+                      //+ " -> " + g.getVertexVal(indexArray[0]);
 
         currentWeight = g.getEdgeWeight(g.getVertexVal(indexArray[0]), g.getVertexVal(indexArray[1])) +
                         g.getEdgeWeight(g.getVertexVal(indexArray[1]), g.getVertexVal(indexArray[2])) +
-                        g.getEdgeWeight(g.getVertexVal(indexArray[2]), g.getVertexVal(indexArray[4])) +
+                        g.getEdgeWeight(g.getVertexVal(indexArray[2]), g.getVertexVal(indexArray[3])) +
+						g.getEdgeWeight(g.getVertexVal(indexArray[3]), g.getVertexVal(indexArray[4])) +
                         g.getEdgeWeight(g.getVertexVal(indexArray[4]), g.getVertexVal(indexArray[0]));
 
         //compare current to best
+		if (currentWeight < bestWeight){
+			bestPath = currentPath;
+			bestWeight = currentWeight;
+		}
 
         std::cout << currentPath << " : " << currentWeight << std::endl;
+		
+		//write to file
+		outfile<<currentPath<<" : "<<currentWeight << std::endl;
 
         numPaths++;
 
     } while (std::next_permutation(indexArray + 1, indexArray + sizeOfVerticesA));
 
-    std::cout << numPaths << std::endl;
+	//write best to file
+	outfile<<"Best Path: "<<std::endl;
+	outfile<<bestPath<<" : "<<bestWeight<<std::endl;
+	
+	//close file
+	outfile.close();
+
+    std::cout << "numPaths: "<<numPaths << std::endl;
+	std::cout<<"Best Path:"<<std::endl;
+	std::cout<<bestPath<<" : "<<bestWeight<<std::endl;
+	
     //g.displayData();
     return 0;
 }

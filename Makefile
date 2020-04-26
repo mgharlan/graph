@@ -4,7 +4,7 @@ CFLAGS=-c -g -std=c++11
 all: main
 
 archive:
-	-tar -cf hw5.tar main.cpp graph.cpp graph.h input.txt result.txt Makefile
+	-tar -cf final.tar main.cpp graph.cpp graph.h input.txt result.txt Makefile
 
 main: main.o graph.o
 	$(CC) main.o graph.o -o main 
