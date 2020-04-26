@@ -65,5 +65,6 @@ int main(void){
 	g2.addEdge("2","3",1);
 	g2.addEdge("3","2",1);
 	g2.displayData();
-	g2.depthFirstTraversal("RENO");
+	g2.depthFirstTraversal("1");
+	g2.breadthFirstTraversal("1");
 }

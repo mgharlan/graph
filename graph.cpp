@@ -255,15 +255,40 @@ bool graph<T>::checkVisited(T value, T* visited, int size){
 }
 
 template<class T>
-void graph<T>::breadthFirstTravel(){
+void graph<T>::breadthFirstTraversal(T start){
+	if(isEmpty() or getVertexPos(start) == -1){
+		throw(10);
+	}
+	std::queue<T> q;
+	T visited[numberOfVertices];
+	visited[0] = start;
+	int vSize = 1;
 	
+	q.push(start);
+	breadthHelper(start, q, visited, vSize);
+}
+
+template<class T>
+void graph<T>::breadthHelper(T start, std::queue<T>& q, T* visited, int size){
+	for (int i =0;i<numberOfVertices;i++){
+		T val = getVertexVal(i);
+		if(checkEdge(start,val) != 0 and 
+			not checkVisited(val,visited,size)){
+				q.push(val);
+				visited[size] = val;
+				size++;
+				breadthHelper(val,q,visited,size);
+		}
+	}
+	std::cout<<q.front()<<std::endl;
+	q.pop();
 }
 
 template<class T>
 void graph<T>::displayData(){
 	std::cout << std::endl;
-	std::cout << "Numer of Edges : " << numberOfEdges << std::endl;
-	std::cout << "Numer of Vertices : " << numberOfVertices << std::endl;
+	std::cout << "Number of Edges : " << numberOfEdges << std::endl;
+	std::cout << "Number of Vertices : " << numberOfVertices << std::endl;
 
 	std::cout << std::endl;
 	std::cout << "Vertex Array : " << std::endl;

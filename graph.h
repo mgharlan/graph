@@ -13,6 +13,7 @@ Changes:
 #define GRAPH_H
 
 #include <stack>
+#include <queue>
 
 template <class T>
 class graph{
@@ -24,6 +25,7 @@ private:
 	//helper functions:
 	bool checkVisited(T value, T* visited, int size);
 	void depthHelper(T start, std::stack<T>& s, T* visited, int size);
+	void breadthHelper(T start, std::queue<T>& q, T* visited, int size);
 
 protected:
 	int edgeArray[MAXSIZE][MAXSIZE];
@@ -45,7 +47,7 @@ public:
 	int getVertexPos(T value);
 	T getVertexVal(int pos);
 	void depthFirstTraversal(T start);
-	void breadthFirstTravel();
+	void breadthFirstTraversal(T start);
 	T* getVertexArray();
 
 	//Debugging
