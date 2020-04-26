@@ -75,7 +75,7 @@ bool graph<T>::checkEdge(T start, T end){
 
 template<class T>
 bool graph<T>::addEdge(T start, T end, int weight){
-	
+		
 	if(!isEmpty())
 	{
 		int startIndex = getVertexPos(start);
