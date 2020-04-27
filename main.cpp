@@ -18,7 +18,6 @@ void readFile(graph<std::string> &g);
 
 int main(void)
 {
-
     graph<std::string> g;
     readFile(g);
 
@@ -38,6 +37,11 @@ int main(void)
 	std::ofstream outfile;
 	outfile.open("result.txt");
 
+    std::cout<<"\nThe Traveling Salesman Problem"<<std::endl;
+    std::cout<<"-----------------------------------------------------------------"<<std::endl;
+    std::cout<<"Possible Paths and Mileage:"<<std::endl;
+     outfile<<"Possible Paths and Mileage:"<<std::endl;
+    
     // O will always be the first element (never shifted) Reno
     //Iterate over all the possible paths
     do
@@ -69,17 +73,18 @@ int main(void)
     } while (std::next_permutation(indexArray + 1, indexArray + sizeOfVerticesA));
 
 	//write best to file
+    outfile << std::endl;
 	outfile<<"Best Path: "<<std::endl;
 	outfile<<bestPath<<" : "<<bestWeight<<std::endl;
 	
 	//close file
 	outfile.close();
 
-    std::cout << "numPaths: "<<numPaths << std::endl;
+    std::cout << std::endl;
 	std::cout<<"Best Path:"<<std::endl;
 	std::cout<<bestPath<<" : "<<bestWeight<<std::endl;
+    std::cout << "\nThe Data was also written to result.txt" << std::endl;
 	
-    //g.displayData();
     return 0;
 }
 

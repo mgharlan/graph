@@ -1,3 +1,4 @@
+Possible Paths and Mileage:
 Reno -> SanFran -> SaltLake -> Seattle -> LasVegas -> Reno : 3358
 Reno -> SanFran -> SaltLake -> LasVegas -> Seattle -> Reno : 3204
 Reno -> SanFran -> Seattle -> SaltLake -> LasVegas -> Reno : 2726
@@ -22,5 +23,6 @@ Reno -> LasVegas -> SaltLake -> SanFran -> Seattle -> Reno : 3108
 Reno -> LasVegas -> SaltLake -> Seattle -> SanFran -> Reno : 2726
 Reno -> LasVegas -> Seattle -> SanFran -> SaltLake -> Reno : 3626
 Reno -> LasVegas -> Seattle -> SaltLake -> SanFran -> Reno : 3358
+
 Best Path: 
 Reno -> SanFran -> Seattle -> SaltLake -> LasVegas -> Reno : 2726
